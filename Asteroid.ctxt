@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=x\ y\ radius\ minVelocity\ maxVelocity\ hitsLeft\ numSplit
+comment0.target=Asteroid(double,\ double,\ double,\ double,\ double,\ int,\ int)
+comment1.params=scrnWidth\ scrnHeight
+comment1.target=void\ move(int,\ int)
+comment2.params=g
+comment2.target=void\ draw(java.awt.Graphics)
+comment3.params=
+comment3.target=int\ getHitsLeft()
+comment3.text=\r\nreturns\ hitsLeft\ so\ that\ the\ AsteroidsGame\ class\ can\r\ndetermine\ whether\ the\ asteroid\ should\ be\ split\ up\ further\ or\ not.\r\n
+comment4.params=
+comment4.target=int\ getNumSplit()
+comment4.text=\r\n\ returns\ the\ number\ of\ smaller\ asteroids\ that\ this\ asteroid\ should\ split\ into\ when\ hit\ by\ a\ shot.\r\n\ \r\n
+comment5.params=ship
+comment5.target=boolean\ shipCollision(Ship)
+comment5.text=\r\n\ Collision\ detection\ is\ the\ programming\ necessary\ to\ determine\ when\ one\ object\ in\ a\ game\ collides\ with\ another.\ \r\n\ In\ asteroids,\ the\ only\ collisions\ we\ need\ to\ detect\ and\ respond\ to\ are\ collisions\ between\ a\ shot\ and\ an\ asteroid\ and\ collisions\ between\ the\ ship\ and\ an\ asteroid.\ \r\n\ Because\ these\ both\ involve\ an\ asteroid,\ we\ will\ implement\ the\ methods\ that\ detect\ collisions\ in\ the\ Asteroid\ class.\ \r\n\ \r\n\ To\ greatly\ simplify\ the\ calculations\ needed\ to\ detect\ collisions,\ we\ will\ approximate\ the\ shape\ of\ the\ ship\ with\ a\ circle.\ \r\n\r\n\ If\ the\ sum\ of\ the\ radii\ of\ two\ circles\ is\ greater\ than\ the\ distance\ between\ the\ centers\ of\ those\ circles,\ then\ the\ circles\ are\ touching\ (or\ overlapping)\ each\ other.\r\n\r\n\ Using\ the\ distance\ formula,\ the\ circles\ have\ collided\ if\ the\ following\ statement\ is\ true,\r\n\ \r\n\ r1+r2\ >\ ((x1\u2013x2)2\ +\ (y1\u2013y2)2)2\r\n\ \r\n\ Where\ (x1,y1),\ (x2,y2)\ are\ the\ centers\ of\ the\ circles\ and\ r1,\ r2\ are\ their\ radii.\r\n\ \r\n\ Because\ calculating\ square\ roots\ requires\ more\ processing\ time\ than\ multiplying,\ we\ can\ make\ our\ program\ more\ efficient\ by\ squaring\ both\ sides\ of\ the\ inequality.\r\n\ (Squaring\ the\ radii\ before\ texting\ equality)\r\n\ \r\n\ Then,\ we\ can\ determine\ if\ the\ circles\ have\ collided\ by\ using\ this\ inequality\:\r\n\ \r\n\ (r1+r2)2\ >\ (x1\u2013x2)2\ +\ (y1\u2013y2)2\r\n\ \r\n\ \ \ \ \r\n
+comment6.params=shot
+comment6.target=boolean\ shotCollision(Shot)
+comment6.text=\r\n\ (please\ refer\ to\ above\ first)\r\n\ When\ determining\ if\ a\ shot\ has\ collided\ with\ an\ asteroid,\ we\ will\ treat\ the\ shots\ as\ points\ with\ no\ radius.This\ leaves\ only\ the\ radius\ of\ the\ \r\n\ asteroid\ to\ be\ squared\ on\ the\ left\ side\ of\ the\ inequality.\r\n\ \r\n\ if(ship\ radius\ 2)\ >\ (x\ of\ shot\ -\ x\ of\ this\ aseroid)2\ +\ (y\ of\ shot\ -\ y\ of\ this\ asteroid)2\ \ \r\n\ \r\n
+comment7.params=minVelocity\ maxVelocity
+comment7.target=Asteroid\ createSplitAsteroid(double,\ double)
+comment7.text=\r\n\ We\ need\ one\ last\ method\ that\ will\ create\ the\ smaller\ asteroids\ when\ the\ asteroid\ is\ shot.\r\n\ \r\n\ A\ good\ way\ to\ determine\ the\ size\ of\ the\ smaller\ asteroids\ is\ to\ make\ the\ sum\ of\ their\ areas\ equal\ to\ the\ area\ of\ the\ original\ asteroid.\ \r\n\ \r\n\ This\ can\ be\ done\ simply\ by\ setting\ their\ radii\ equal\ to\ the\ radius\ of\ the\ original\ asteroid\ divided\ by\ the\ square\ root\ of\ numSplit.\ \r\n\ \r\n\ The\ smaller\ asteroids\ are\ given\ one\ less\ hit\ left\ than\ the\ original\ asteroid.\ They\ will\ split\ up\ into\ the\ same\ number\ of\ asteroids\ as\ the\ original\ \r\n\ if\ they\ still\ have\ a\ hit\ left.\ The\ code\ for\ the\ method\ is\ given\ in\ Code\ 6.3.\r\n\ \r\n\ \r\n
+numComments=8

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=x\ y\ angle\ shipXVel\ shipYVel\ lifeLeft
+comment0.target=Shot(double,\ double,\ double,\ double,\ double,\ int)
+comment1.params=scrnWidth\ scrnHeight
+comment1.target=void\ move(int,\ int)
+comment2.params=g
+comment2.target=void\ draw(java.awt.Graphics)
+comment3.params=
+comment3.target=double\ getX()
+comment4.params=
+comment4.target=double\ getY()
+comment5.params=
+comment5.target=int\ getLifeLeft()
+numComments=6
